@@ -1,0 +1,22 @@
+{
+  "name": "hotels",
+  "version": "1.0.0",
+  "description": "Aplicación web que permita mostrar información de hoteles.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raquelsr/Hotels.git"
+  },
+  "author": "Raquel Serrano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raquelsr/Hotels/issues"
+  },
+  "homepage": "https://github.com/raquelsr/Hotels#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
