@@ -1,5 +1,6 @@
 
 async function showHotels() {
+  // Prueba del pre-commit
   const hotels = await this.getHotels();
   const list = document.createElement('ul');
 

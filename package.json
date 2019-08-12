@@ -4,8 +4,12 @@
   "description": "Aplicación web que permita mostrar información de hoteles.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "node node_modules/eslint/bin/eslint.js ./src/*.js"
   },
+  "pre-commit": [
+    "eslint"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/raquelsr/Hotels.git"
@@ -17,7 +21,8 @@
   },
   "homepage": "https://github.com/raquelsr/Hotels#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pre-commit": "^1.2.2"
   },
   "devDependencies": {
     "eslint": "^6.1.0",
