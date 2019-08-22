@@ -1,8 +1,12 @@
+import { request } from './request';
 
 async function showHotels() {
-  const hotels = await this.getHotels();
+  // const hotels = await this.getHotels();
+  const hotels = await getHotels();
+
   const list = document.createElement('ul');
 
+  request();
   // Con fragment se evita el cross-site
   const fragment = document.createDocumentFragment();
 
@@ -18,7 +22,6 @@ async function showHotels() {
   div[0].appendChild(list);
 }
 
-// eslint-disable-next-line no-unused-vars
 async function getHotels() {
   const response = await fetch('http://localhost:3000/hotels');
   const data = await response.json();
