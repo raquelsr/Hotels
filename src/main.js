@@ -74,7 +74,7 @@ function addInfo(divInfo, hotel) {
 
 function addImage(hotel) {
   const imgElement = document.createElement('img');
-  imgElement.setAttribute('src', `../${hotel.imgUrl}`);
+  imgElement.setAttribute('src', `${hotel.imgUrl}`);
   imgElement.setAttribute('alt', hotel.name);
   return imgElement;
 }
