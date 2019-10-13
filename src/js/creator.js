@@ -53,6 +53,7 @@ function addInfo(divInfo, hotel) {
 }
 
 function toggleClass(panel) {
+  console.log(panel);
   if (panel.style.display === 'none') {
     panel.style.display = 'flex';
   } else {
@@ -72,6 +73,7 @@ export function createHotelNode(hotel) {
   accordion.classList.add('accordion');
   const divInfo = document.createElement('div');
   divInfo.classList.add('panel');
+  divInfo.style.display = 'none';
   const title = addText('h2', hotel.name);
   accordion.appendChild(title);
   accordion.appendChild(divInfo);

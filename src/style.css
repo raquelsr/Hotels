@@ -6,7 +6,7 @@ nav {
   background-color: #3BEED0;
   color: #000;
   text-align: center;
-  height: 6%;
+  height: 2em;
   font-size: 3em;
 }
 .hotels ul {
@@ -43,7 +43,6 @@ nav {
 .panel {
   padding: 0 6%;
   margin-top: 6%;
-  display: none;
   overflow: hidden;
   position: relative;
 }
