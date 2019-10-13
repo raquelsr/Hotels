@@ -1,11 +1,13 @@
 body {
   margin: 0;
+  font-family: sans-serif;
 }
 nav {
   background-color: #3BEED0;
   color: #000;
   text-align: center;
   height: 6%;
+  font-size: 3em;
 }
 .hotels ul {
   list-style: none;
@@ -16,20 +18,22 @@ nav {
 
 .accordion {
   background-color: #eee;
-  color: #444;
+  color: #000;
   cursor: pointer;
   width: 100%;
   border: none;
   text-align: left;
   outline: none;
   font-size: 15px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
   transition: 0.4s;
   padding: 6% 0;
 }
 
 .accordion h2 {
   margin: 0 5%;
-
+  font-size: 2.5em;
 }
 
 .active, .accordion:hover {
@@ -38,12 +42,44 @@ nav {
 
 .panel {
   padding: 0 6%;
-  margin-top: 4%;
+  margin-top: 6%;
   display: none;
-  background-color: #ccc;
   overflow: hidden;
+  position: relative;
 }
 
-img {
+.image {
   background-image: url('../imgs/nowhere.jpg');
+  width: 30%;
+  height: 12em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 2%;
+}
+
+.panel h1 {
+  margin: 0;
+}
+
+.panel p {
+  font-size: 1.5em;
+  margin-top: 4%;
+}
+
+.price {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-right: 4%;
+}
+
+.priceNumber {
+  font-size: 3em;
+  display: block;
+  text-align: right;
+}
+
+.priceText {
+  font-size: 2em;
+  color: purple;
 }

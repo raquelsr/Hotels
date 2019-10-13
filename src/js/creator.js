@@ -8,10 +8,15 @@ function addText(tag, text) {
 }
 
 function addImage(hotel) {
-  const imgElement = document.createElement('img');
-  imgElement.setAttribute('src', `${hotel.imgUrl}`);
-  imgElement.setAttribute('alt', hotel.name);
-  return imgElement;
+  const imageDiv = document.createElement('div');
+  // const img = document.createElement('img');
+  imageDiv.classList.add('image');
+  // imageDiv.appendChild(img);
+  /* 
+  img.style.backgroundImage = "url('/imgs/nowhere.jpg')";
+  img.style.width = '200px';
+  img.style.height = '200px'; */
+  return imageDiv;
 }
 
 function addStarts(stars) {
@@ -23,18 +28,33 @@ function addStarts(stars) {
   return p;
 }
 
+function addPrice(price) {
+  const div = document.createElement('div');
+  div.classList.add('price');
+  const priceNumber = addText('span', `${price}€`);
+  priceNumber.classList.add('priceNumber');
+  const priceText = addText('span', 'Total hotel stay');
+  priceText.classList.add('priceText');
+  div.appendChild(priceNumber);
+  div.appendChild(priceText);
+  return div;
+}
 function addInfo(divInfo, hotel) {
   const img = addImage(hotel);
+  const div = document.createElement('div');
+  const title = addText('h1', hotel.name);
   const stars = addStarts(hotel.rating);
-  const price = addText('span', hotel.price);
+  const price = addPrice(hotel.price);
   divInfo.appendChild(img);
-  divInfo.appendChild(stars);
-  divInfo.appendChild(price);
+  div.appendChild(title);
+  div.appendChild(stars);
+  div.appendChild(price);
+  divInfo.appendChild(div);
 }
 
 function toggleClass(panel) {
   if (panel.style.display === 'none') {
-    panel.style.display = 'block';
+    panel.style.display = 'flex';
   } else {
     panel.style.display = 'none';
   }
