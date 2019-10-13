@@ -9,6 +9,7 @@ nav {
   height: 2em;
   font-size: 3em;
 }
+
 .hotels ul {
   list-style: none;
   padding: 0;
@@ -81,4 +82,20 @@ nav {
 .priceText {
   font-size: 2em;
   color: purple;
+}
+
+@media screen and (min-width: 640px) {
+  .hotels {
+    width: 30%;
+  }
+  .accordion {
+    display: flex;
+    position: relative;
+  }
+  .panel {
+    position: absolute;
+    left: 100%;
+    margin-left: 40px;
+    width: 200%;
+  }
 }
