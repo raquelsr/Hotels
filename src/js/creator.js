@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 /* eslint-disable no-param-reassign */
 /* eslint-disable import/prefer-default-export */
 
@@ -32,9 +33,9 @@ function addPrice(price) {
   const div = document.createElement('div');
   div.classList.add('price');
   const priceNumber = addText('span', `${price}€`);
-  priceNumber.classList.add('priceNumber');
+  priceNumber.classList.add('price--number');
   const priceText = addText('span', 'Total hotel stay');
-  priceText.classList.add('priceText');
+  priceText.classList.add('price--text');
   div.appendChild(priceNumber);
   div.appendChild(priceText);
   return div;
@@ -42,6 +43,7 @@ function addPrice(price) {
 function addInfo(divInfo, hotel) {
   const img = addImage(hotel);
   const div = document.createElement('div');
+  div.classList.add('info');
   const title = addText('h1', hotel.name);
   const stars = addStarts(hotel.rating);
   const price = addPrice(hotel.price);
@@ -52,19 +54,25 @@ function addInfo(divInfo, hotel) {
   divInfo.appendChild(div);
 }
 
-function toggleClass(panel) {
-  console.log(panel);
-  if (panel.style.display === 'none') {
-    panel.style.display = 'flex';
-  } else {
-    panel.style.display = 'none';
+function closeOtherPanels(panel) {
+  const panels = document.getElementsByClassName('panel');
+  for (let i = 0; i < panels.length; i++) {
+    if (panels[i] !== panel) {
+      panels[i].style.display = 'none';
+    }
   }
+}
+
+function showPanel(panel) {
+  // eslint-disable-next-line no-unused-expressions
+  (panel.style.display === 'none') ? panel.style.display = 'flex' : panel.style.display = 'none';
 }
 
 function controlClick(accordion) {
   accordion.addEventListener('click', () => {
     const panel = accordion.getElementsByClassName('panel');
-    toggleClass(panel[0]);
+    closeOtherPanels(panel[0]);
+    showPanel(panel[0]);
   });
 }
 
