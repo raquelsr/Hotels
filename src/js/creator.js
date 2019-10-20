@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable no-plusplus */
 /* eslint-disable no-param-reassign */
 /* eslint-disable import/prefer-default-export */
@@ -22,7 +23,6 @@ function addImage(hotel) {
 
 function addStarts(stars) {
   const p = document.createElement('p');
-  // eslint-disable-next-line no-plusplus
   for (let i = 0; i < stars; i++) {
     p.textContent += String.fromCodePoint(0x2B50);
   }
@@ -40,6 +40,7 @@ function addPrice(price) {
   div.appendChild(priceText);
   return div;
 }
+
 function addInfo(divInfo, hotel) {
   const img = addImage(hotel);
   const div = document.createElement('div');
@@ -64,7 +65,6 @@ function closeOtherPanels(panel) {
 }
 
 function showPanel(panel) {
-  // eslint-disable-next-line no-unused-expressions
   (panel.style.display === 'none') ? panel.style.display = 'flex' : panel.style.display = 'none';
 }
 
@@ -76,7 +76,7 @@ function controlClick(accordion) {
   });
 }
 
-export function createHotelNode(hotel) {
+function createHotelNode(hotel) {
   const accordion = document.createElement('li');
   accordion.classList.add('accordion');
   const divInfo = document.createElement('div');
@@ -88,4 +88,17 @@ export function createHotelNode(hotel) {
   addInfo(divInfo, hotel);
   controlClick(accordion);
   return accordion;
+}
+
+export function createList(hotels) {
+  const list = document.createElement('ul');
+  // Con fragment se evita el cross-site
+  const fragment = document.createDocumentFragment();
+
+  hotels.forEach((hotel) => {
+    const node = createHotelNode(hotel);
+    fragment.appendChild(node);
+  });
+  list.appendChild(fragment);
+  return list;
 }
