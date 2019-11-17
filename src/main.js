@@ -1,9 +1,9 @@
-import { getHotels } from './js/api';
 import { createList } from './js/creator';
+import Api from './js/api';
 
 async function showHotels() {
-  // const hotels = await this.getHotels(); --> esto me gustaría
-  const hotels = await getHotels();
+  const api = new Api();
+  const hotels = await api.getHotels();
   const hotelsList = createList(hotels);
   const div = document.getElementsByClassName('hotels');
   div[0].appendChild(hotelsList);
