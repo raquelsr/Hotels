@@ -1,12 +1,8 @@
-import { createList } from './js/creator';
-import Api from './js/api';
+import HotelCollectionController from './js/hotelCollectionController';
 
-async function showHotels() {
-  const api = new Api();
-  const hotels = await api.getHotels();
-  const hotelsList = createList(hotels);
-  const div = document.getElementsByClassName('hotels');
-  div[0].appendChild(hotelsList);
+function showHotels() {
+  const controller = new HotelCollectionController();
+  controller.run();
 }
 
 window.onload = showHotels;
