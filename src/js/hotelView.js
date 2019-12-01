@@ -8,7 +8,7 @@ export default class HotelView {
         return `<li class="accordion"> 
                     <h2>${this.hotel.name}</h2>
                     <div class="panel" style="display:none">
-                        <div class="image" src="/../../imgs/${this.hotel.img}"></div>
+                        <div class="image" src="/../${this.hotel.imgUrl}"></div>
                         <div class="info">
                             <h1>${this.hotel.name}</h1>
                             <p>${String.fromCodePoint(0x2B50).repeat(this.hotel.rating)}</p>

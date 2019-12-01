@@ -28,14 +28,10 @@ export default class HotelCollectionView {
         const fragment = document.createDocumentFragment();
         const list = document.createElement('ul');
 
-        //For each
-        //this.hotelCollection.forEach((hotel) => {
-        for(let i = 0; i < this.hotelCollection.hotels.length; i++) {
-            const hotelView = new HotelView(this.hotelCollection.hotels[i].hotel);
-            list.innerHTML += hotelView.create();
-            /*const node = createHotelNode(hotel);
-            fragment.appendChild(node);*/
-        }
+        this.hotelCollection.hotels.forEach(hotel => {
+            const hotelView = new HotelView(hotel.hotel);
+            list.innerHTML += hotelView.create();  
+        })
         
         fragment.appendChild(list);
         return list;
