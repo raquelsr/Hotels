@@ -3,7 +3,8 @@ import HotelCollectionController from './js/hotelCollectionController';
 async function showHotels() {
   const controller = new HotelCollectionController();
   await controller.run();
-  controller.closeAllPanels()
+  // ¿Dónde hago el control del click?
+  controller.closeAllPanels();
   controller.handleClick();
 }
 
