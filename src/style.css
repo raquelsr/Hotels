@@ -55,6 +55,10 @@ nav h1 {
   position: relative;
 }
 
+.is-hidden {
+  display: none;
+}
+
 .image {
   background-image: url('../imgs/nowhere.jpg');
   width: 60%;

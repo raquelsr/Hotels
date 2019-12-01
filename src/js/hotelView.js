@@ -7,7 +7,7 @@ export default class HotelView {
     create() {
         return `<li class="accordion"> 
                     <h2>${this.hotel.name}</h2>
-                    <div class="panel" style="display:none">
+                    <div class="panel">
                         <div class="image" src="/../${this.hotel.imgUrl}"></div>
                         <div class="info">
                             <h1>${this.hotel.name}</h1>
